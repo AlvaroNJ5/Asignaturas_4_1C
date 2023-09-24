@@ -1,0 +1,6 @@
+calc = 0
+for n=0:1000
+    i = 2*n+1
+    calc=calc + 400/(i*%pi)*sin()
+end
+

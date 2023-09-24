@@ -1,0 +1,14 @@
+Vp = 400
+i = complex(0,1)
+for n=1:10
+    w = 125000*%pi*n
+    Z = 1/(i*w*0.1*10^(-6))+i*w*64.85*10^(-6)+10
+    V1 = 2*Vp/(n*%pi)
+    I = (V1)/Z
+    mod_I = sqrt((real(I))^2+(imag(I))^2)
+    arg_I = atan((imag(I))/(real(I)))
+    Pt = V1*conj(I)/2
+    Preal = real(Pt)
+
+    mprintf("%f |_ %f\n",mod_I, arg_I )
+end

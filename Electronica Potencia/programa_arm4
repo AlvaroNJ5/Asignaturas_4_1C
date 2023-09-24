@@ -1,0 +1,16 @@
+Vp = 200
+i = complex(0,1)
+for n=1:10
+    w = 125000*%pi*n
+    Z = 1/(i*w*1*10^(-6))+i*w*64.85*10^(-6)+1
+    V1 = 4*Vp/(n*%pi)
+    Van = 4*Vp/(n*%pi)*cos(1.9635)
+    Vbn = 4*Vp/(n*%pi)*sin(1.9635)
+    V2 = Van-Vbn*i
+    I = (V1-V2)/Z
+    Pt = V1*conj(I)/2
+    Preal = real(Pt)
+    mod_I = sqrt((real(I))^2+(imag(I))^2)
+    arg_I = atan((imag(I))/(real(I)))
+    mprintf("%f\n", Preal)
+end
